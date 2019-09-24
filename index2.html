@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js">
+</script>
+<script>
+$(document).ready(function(){
+// this is the id of the form
+$("#formid").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+
+    var form = $(this);
+//$('#getDataFromJson').on('click', function (event) {
+  /*Ajax started*/
+  //Var decl
+  let formdata = $('#formid').serializeArray();
+
+  let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8090/inventory",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "cache-control": "no-cache"
+    },
+    "processData": false,
+    "data": "{\n\t\t\"item_name\":"+formdata[0].value+"}"
+  }
+  //Ajax call block
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    $(".result").text(response);
+  });
+  /*Ajax End*/
+});
+
+//Document end
+});
+
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<span>items: <span class="result"></span></span>
+<p>Before onclick</p>
+<p>all the categories ids in the inventory <a href="index1.html">page 2</a> ?</p>
+<p>all the items across all stores <a href="index2.html">page 3</a> ?</p>
+<p>the median of the prices for all items in the category <a href="index3.html">page 4</a> ?</p>
+<p>HOME <a href="index.html">page 5</a> ?</p>
+<form method="get" id="formid">
+  Enter item_name:
+  <input name="item name" type="text">
+  <br><br>
+  <input type="submit" class="getDataFromJson" id="getDataFromJson" >
+</form>
+</body>
+</html>

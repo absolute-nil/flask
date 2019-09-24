@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js">
+</script>
+<script>
+$(document).ready(function(){
+// this is the id of the form
+$("#formid").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+
+    var form = $(this);
+//$('#getDataFromJson').on('click', function (event) {
+  /*Ajax started*/
+  //Var decl
+  let formdata = $('#formid').serializeArray();
+
+  let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:8090/",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "cache-control": "no-cache"
+    },
+    "processData": false,
+    "data": "{}"
+  }
+  //Ajax call block
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    $("p").text(response);
+  });
+  /*Ajax End*/
+});
+
+//Document end
+});
+
+</script>
+</head>
+<body>
+
+<h2>Welcome</h2>
+
+<span>API Response: </span>
+<p>Before onclick</p>
+<p>all the categories ids in the inventory <a href="index1.html">page 2</a> ?</p>
+<p>all the items across all stores <a href="index2.html">page 3</a> ?</p>
+<p>the median of the prices for all items in the category <a href="index3.html">page 4</a> ?</p>
+<p>HOME <a href="index.html">page 5</a> ?</p>
+</body>
+</html>

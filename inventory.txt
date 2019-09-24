@@ -1,0 +1,58 @@
+[
+    {
+		"store": 1,
+		"category": 10,
+		"item_name": "shirt",
+		"items": 10,
+		"price": 100
+    },
+    {
+		"store": 2,
+		"category": 10,
+		"item_name": "shorts",
+		"items": 20,
+		"price": 20
+    },
+    {
+		"store": 1,
+		"category": 1,
+		"item_name": "pc",
+		"items":1,
+		"price": 10
+    },
+    {
+		"store": 3,
+		"category": 120,
+		"item_name": "item2",
+		"items":4,
+		"price": 200
+    },
+    {
+		"store": 2,
+		"category": 1,
+		"item_name": "pc",
+		"items":3,
+		"price": 3
+    },
+    {
+		"store": 2,
+		"category": 10,
+		"item_name": "socks",
+		"items":100,
+		"price": 50
+    },
+    {
+		"store": 30,
+		"category": 2,
+		"item_name": "bamba",
+		"items":15,
+		"price": 5
+    },
+    {
+		"store": 1,
+		"category": 2,
+		"item_name": "bisli",
+		"items":35,
+		"price": 7.5
+    }
+]
